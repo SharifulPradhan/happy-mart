@@ -1,8 +1,7 @@
-## This project build for Programming Hero Batch 3 Assignment 10
-
-# Features of this projects
+# Happy Mart Shopping React App
 
 #### live Site Link [Happy Mart](https://happy-mart-9b1e4.web.app/)
+
 #### Features
 1. You can buy product from our homepage
 2. If you click Buy Now button you will redirected to login page if you are not logged in.
