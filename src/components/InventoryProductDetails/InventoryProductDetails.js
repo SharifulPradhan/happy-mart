@@ -17,9 +17,9 @@ const InventoryProductDetails = (props) => {
         }
       })
   }
-  
+
   return (
-    <>{!productDelete && 
+    <>{!productDelete &&
       <tr>
         <td>{name}</td>
         <td>{quantity}</td>

@@ -16,11 +16,11 @@ const Home = () => {
 
   return (
     <div className="container-sm bg-color text-center mt-5">
-      <h1 style={{color: "red"}}>শুভ নববর্ষ!! নতুন বছরে অর্ডার করলেই ফ্রি হোম ডেলিভারি</h1>
+      <h1 style={{ color: "red" }}>শুভ নববর্ষ!! নতুন বছরে অর্ডার করলেই ফ্রি হোম ডেলিভারি</h1>
       <img src="https://www.google.com/logos/doodles/2017/first-day-of-bengali-calendar-pohela-boishakh-5669119973130240.3-2xa.gif" alt="" fluid rounded />
       {
         loading
-          ? <div className="text-center"><Spinner animation="border" variant="primary"/></div>
+          ? <div className="text-center"><Spinner animation="border" variant="primary" /></div>
           : <div className="row">
             {
               products.map(product => <ProductDetails product={product} key={product._id}></ProductDetails>)
