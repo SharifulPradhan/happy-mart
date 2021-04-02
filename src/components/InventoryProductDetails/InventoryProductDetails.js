@@ -7,7 +7,7 @@ const InventoryProductDetails = (props) => {
 
 
   const handleProductDelete = (id) => {
-    fetch(`http://localhost:4200/deleteProduct/${id}`, {
+    fetch(`https://happy-mart-database.herokuapp.com/deleteProduct/${id}`, {
       method: 'DELETE',
     })
       .then(res => res.json())

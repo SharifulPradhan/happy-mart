@@ -9,7 +9,7 @@ const CheckOut = () => {
   const [orders, setOrders] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    fetch('http://localhost:4200/product/' + id)
+    fetch('https://happy-mart-database.herokuapp.com/product/' + id)
       .then(res => res.json())
       .then(data => {
         setOrders(data)
@@ -20,7 +20,7 @@ const CheckOut = () => {
   const handleCheckOut = () => {
     console.log("handleCheckOut");
     const orderDetails = { ...loggedInUser, product: orders, orderTime: new Date() }
-    fetch('http://localhost:4200/checkOut', {
+    fetch('https://happy-mart-database.herokuapp.com/checkOut', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

@@ -6,7 +6,7 @@ const Home = () => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    fetch('http://localhost:4200/products')
+    fetch('https://happy-mart-database.herokuapp.com/products')
       .then(res => res.json())
       .then(data => {
         setProducts(data);

@@ -18,7 +18,7 @@ const AddProduct = () => {
       quantity: data.quantity,
       imageURL: imageURL
     };
-    fetch('http://localhost:4200/addProduct', {
+    fetch('https://happy-mart-database.herokuapp.com/addProduct', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

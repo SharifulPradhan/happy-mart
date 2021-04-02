@@ -10,7 +10,7 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    fetch('http://localhost:4200/orders?email=' + loggedInUser.email)
+    fetch('https://happy-mart-database.herokuapp.com/orders?email=' + loggedInUser.email)
       .then(res => res.json())
       .then(data => {
         setOrders(data);
