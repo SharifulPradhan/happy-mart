@@ -1,10 +1,12 @@
 import { Button } from 'react-bootstrap';
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenSquare, faWindowClose} from '@fortawesome/free-solid-svg-icons';
+
 
 const InventoryProductDetails = (props) => {
   const { _id, name, price, quantity } = props?.product;
   const [productDelete, setProductDelete] = useState(false);
-
 
   const handleProductDelete = (id) => {
     fetch(`https://happy-mart-database.herokuapp.com/deleteProduct/${id}`, {
@@ -24,7 +26,7 @@ const InventoryProductDetails = (props) => {
         <td>{name}</td>
         <td>{quantity}</td>
         <td>${price}</td>
-        <td><Button>Add</Button> <Button onClick={() => handleProductDelete(_id)}>Delete</Button></td>
+        <td><Button variant="success"><FontAwesomeIcon icon={faPenSquare} /></Button> <Button variant="danger" onClick={() => handleProductDelete(_id)}><FontAwesomeIcon icon={faWindowClose} /></Button></td>
       </tr>}
     </>
   );

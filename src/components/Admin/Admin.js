@@ -7,6 +7,8 @@ import {
   Link
 } from 'react-router-dom';
 import ManageProduct from '../ManageProduct/ManageProduct';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenSquare, faPlusSquare, faThLarge} from '@fortawesome/free-solid-svg-icons';
 
 const Admin = () => {
   return (
@@ -17,9 +19,9 @@ const Admin = () => {
           <h1><Link to="/home" className="text-white">Happy Mart</Link></h1>
           <br />
           <br />
-          <h4><Link to="/admin/manage-product" className="text-white">Manage Product</Link></h4>
-          <h4><Link to="/admin/add-product" className="text-white">Add Product</Link></h4>
-          <h4><Link className="text-white" to="/edit-product">Edit Product</Link></h4>
+          <h5><Link to="/admin/manage-product" className="text-white"><FontAwesomeIcon icon={faThLarge}></FontAwesomeIcon> Manage Product</Link></h5>
+          <h5><Link to="/admin/add-product" className="text-white"><FontAwesomeIcon icon={faPlusSquare}></FontAwesomeIcon> Add Product</Link></h5>
+          <h5><Link className="text-white" to="/edit-product"><FontAwesomeIcon icon={faPenSquare}></FontAwesomeIcon> Edit Product</Link></h5>
         </div>
 
         <div className="col-10 h-100" style={{ backgroundColor: "#F4FCFB" }}>

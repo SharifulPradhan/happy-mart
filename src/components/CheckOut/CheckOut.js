@@ -57,7 +57,7 @@ const CheckOut = () => {
                 </tr>
               </tbody>
             </Table>
-            <Button onClick={() => handleCheckOut()}>Checkout</Button>
+            <Button size="lg" variant="success" onClick={() => handleCheckOut()} block>Checkout</Button>
           </div>
       }
     </>

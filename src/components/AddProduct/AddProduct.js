@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
-import { Spinner } from 'react-bootstrap';
+import { Spinner, Button } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 
 
@@ -73,7 +73,7 @@ const AddProduct = () => {
           {
             loading
               ? <div className="text-center"><Spinner animation="border" variant="primary" /></div>
-              : <input type="submit" value='Save' className="row mt-5" />
+              : <Button variant="success" as="input" type="submit" value='Save' className="row mt-5" />
           }
         </form>
       </div >
