@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import './AddProduct.css'
 
@@ -8,7 +9,7 @@ import './AddProduct.css'
 const AddProduct = () => {
   const { register, handleSubmit } = useForm();
   const [imageURL, setIMageURL] = useState(null);
-  console.log(imageURL);
+  const [loading, setLoading] = useState(false)
 
   const onSubmit = data => {
     const productData = {
@@ -17,10 +18,7 @@ const AddProduct = () => {
       quantity: data.quantity,
       imageURL: imageURL
     };
-    console.log(productData)
-
-    if(imageURL != null){
-      fetch('http://localhost:4200/addProduct', {
+    fetch('http://localhost:4200/addProduct', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -28,9 +26,8 @@ const AddProduct = () => {
       body: JSON.stringify(productData)
     })
       .then(res => console.log('server side response', res))
-      alert("Product Added to Directory") 
-  };
-    }
+    alert("Product Added to Directory Successfully")
+  }
 
   const handleImageUpload = event => {
     console.log(event.target.files[0])
@@ -42,6 +39,7 @@ const AddProduct = () => {
       imageData)
       .then(function (response) {
         setIMageURL(response.data.data.display_url);
+        setLoading(false);
       })
       .catch(function (error) {
         console.log(error);
@@ -58,22 +56,26 @@ const AddProduct = () => {
               <input name="name" defaultValue="Product Name" ref={register} className="form-control" />
             </div>
             <div className="col">
-            <label>Add Price</label>
+              <label>Add Price</label>
               <input name="price" placeholder="price" type="number" ref={register} className="form-control" />
             </div>
           </div>
 
           <div className="row mt-5">
             <div className="col">
-            <label>Add Quantity</label>
+              <label>Add Quantity</label>
               <input name="quantity" placeholder="quantity" type="number" ref={register} className="form-control" />
             </div>
             <div className="col">
-            <label>Add Image</label>
-              <input name="file" type="file" onChange={handleImageUpload} />
+              <label>Add Image</label>
+              <input name="file" type="file" onChange={handleImageUpload} onClick={() => setLoading(true)} />
             </div>
           </div>
-          <input type="submit" value='Save' className="row mt-5" />
+          {
+            loading
+              ? <div className="text-center"><Spinner animation="border" variant="primary" /></div>
+              : <input type="submit" value='Save' className="row mt-5" />
+          }
         </form>
       </div >
     </div>

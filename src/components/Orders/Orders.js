@@ -1,37 +1,50 @@
 import React, { useContext } from 'react';
-import { Table } from 'react-bootstrap';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { Spinner, Table } from 'react-bootstrap';
 import { UserContext } from '../../App';
+import Order from '../Order/Order';
 
 const Orders = () => {
   const [loggedInUser] = useContext(UserContext);
-
+  const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    fetch('http://localhost:4200/orders?email=' + loggedInUser.email)
+      .then(res => res.json())
+      .then(data => {
+        setOrders(data);
+        setLoading(false);
+      });
+  }, [loggedInUser.email])
 
   return (
     <div style={{ height: "100%" }} className="text-center m-5 p-5">
       <div className="container">
-        <h1> Your Orders</h1>
-        <h4>Orders of: {loggedInUser.name}</h4>
-        <h4>Email: {loggedInUser.email}</h4>
+        <h1 style={{ color: 'steelblue' }}> My Orders </h1>
+        <p><span style={{ color: 'steelblue' }}>Name:</span> {loggedInUser.name}</p>
+        <p><span style={{ color: 'steelblue' }}>Email:</span> {loggedInUser.email}</p>
       </div>
-      <div className="container">
-        <Table striped bordered hover>
-          <thead>
-            <tr className="text-muted">
-              <th>Product Name</th>
-              <th>Quantity</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ha</td>
-              <td>pa</td>
-              <td>la</td>
-            </tr>
-          </tbody>
-        </Table>
-
-      </div>
+      {
+        loading
+          ? <div className="text-center"><Spinner animation="border" variant="primary" /></div>
+          : <div className="container mt-5">
+            <Table striped bordered hover>
+              <thead>
+                <tr className="text-muted">
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th>Order Placed On</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  orders.map(order => <Order order={order} key={order._id}></Order>)
+                }
+              </tbody>
+            </Table>
+          </div>
+      }
     </div>
   );
 };
