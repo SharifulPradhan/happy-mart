@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <div className="container-sm bg-color text-center mt-5">
-      <h1 style={{ color: "red" }}>শুভ নববর্ষ!! নতুন বছরে অর্ডার করলেই ফ্রি হোম ডেলিভারি</h1>
+      <h1 style={{ color: "tomato" }}>শুভ নববর্ষ!! নতুন বছরে অর্ডার করলেই ফ্রি হোম ডেলিভারি</h1>
       <img src="https://www.google.com/logos/doodles/2017/first-day-of-bengali-calendar-pohela-boishakh-5669119973130240.3-2xa.gif" alt="" fluid rounded />
       {
         loading

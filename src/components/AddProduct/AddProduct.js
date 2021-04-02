@@ -3,7 +3,6 @@ import React from 'react';
 import { useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
-import './AddProduct.css'
 
 
 const AddProduct = () => {

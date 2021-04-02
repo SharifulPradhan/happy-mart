@@ -3,13 +3,14 @@ import React, { useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
+import logo from "../../logo.png";
 
 const Header = () => {
   const [loggedInUser] = useContext(UserContext);
   console.log(loggedInUser);
   return (
-    <Navbar collapseOnSelect expand="lg" variant="light" className="mt-5 justify-content-between">
-      <Navbar.Brand as={Link} to="/home">Happy Mart</Navbar.Brand>
+    <Navbar collapseOnSelect expand="lg" variant="light" className="m-5 justify-content-between">
+      <Navbar.Brand as={Link} to="/home"><img src={logo} alt=""/></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
