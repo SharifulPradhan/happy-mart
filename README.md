@@ -28,4 +28,4 @@ Happy Mart is a fully responsive Grocery Store Website. Buy your daily needs and
 * Firebase
 
 ## What the website looks like:
-![picture alt](https://github.com/shariful-pradhan-hridoy/travel-maniacs/blob/master/src/images/travel-maniacs-ss1.png)
+![picture alt](https://github.com/shariful-pradhan-hridoy/happy-mart/blob/master/src/website-screenshot.png)
