@@ -1,26 +1,31 @@
-# Happy Mart Shopping React App
+# Happy Mart
+## Live Site URL: https://happy-mart-9b1e4.web.app/
+## Server Site Repo: https://github.com/shariful-pradhan-hridoy/happy-mart-server
 
-#### live Site Link [Happy Mart](https://happy-mart-9b1e4.web.app/)
+Happy Mart is a fully responsive Grocery Store Website. Buy your daily needs and get delivered wherever you want.
 
-#### Special features
-1. Manage Product Section added. You can delete a product there.
-2. 1 Loading Spinner Added to every Page where Data need to load.
-2. 2 Environment Variables used and files are been ignored by gitignore
-3. try to make the Code cleaner as much possible. Props, Components and API names are so far Meaningful I think.
-4. Home Page Totaly Mobile Responsive.
-5. Read Me File Edited.
-
-
-#### Features
-1. You can buy product from our homepage
-2. If you click Buy Now button you will redirected to login page if you are not logged in.
-3. After successfully loggedin by google sign in or other method you will redirected to checkout page.
-4. after that you can place an order by clicking on Checkout Button.
-5. You can also check your orders in Order page.
-6. And If you are a Admin you can Add product and Manage product in the Admin section. Again you have to logged in if you are not already logged in.
-7. If you add product in Add product section of Admin page you can see the products in the Home page and Manage product section also.
-8. And last not the least you can signout yourself from userDetails page. You will find it if you clicked on your name.
+## User Story:
+* A user can buy a product from the Happy Mart homepage.
+* If the user clicks the Buynow button user will be redirected to the login page.
+* After successfully logged in by google sign-in or another method the user will be redirected to the checkout page.
+* after that a user can place an order by clicking on Checkout Button.
+* A user can also check the user’s orders on the Order page.
 
 
 
-#### Thank You for visiting my repo.
+
+## Admin Story: 
+* An admin can Manage products in the Admin section. Of course, the admin has to log in to get access to the admin dashboard.
+* An admin can add products in the add product section of the admin page. Which will be shown on the Home page instantly.
+
+## Dependencies:
+* JavaScript
+* React
+* Node.js
+* body-parser
+* express
+* MongoDB
+* Firebase
+
+## What the website looks like:
+![picture alt](https://github.com/shariful-pradhan-hridoy/travel-maniacs/blob/master/src/images/travel-maniacs-ss1.png)
